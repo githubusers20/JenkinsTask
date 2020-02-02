@@ -2,9 +2,9 @@ node {
     properties([parameters([string(defaultValue: 'ronaldo', description: '', name: 'name', trim: false)])])
    def mvnHome
    stage('Preparation') { // for display purposes
-     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/linuxacademy/content-cje-prebuild.git']]])
+     checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/githubusers20/JenkinsTask.git']]])
            
-      mvnHome = tool 'M3'
+      mvnHome = tool 'maven1'
    }
    stage('Build') {
       // Run the maven build
